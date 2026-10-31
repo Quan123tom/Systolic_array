@@ -1,11 +1,11 @@
 module tpu_fsm #(
     parameter GRID_SIZE = 8
 )(
-    input  logic clk,
-    input  logic rst_ni,
-    input  logic start,
-    input  logic [15:0] act_rows,
-    input  logic valid_pipe_empty,
+    input logic clk,
+    input logic rst_ni,
+    input logic start,
+    input logic [15:0] act_rows,
+    input logic valid_pipe_empty,
     
     output logic fsm_load_agus,
     output logic fsm_loading_weights,
@@ -26,7 +26,7 @@ module tpu_fsm #(
     
     state_t state, next_state;
 
-    logic [3:0]  weight_cnt;
+    logic [3:0] weight_cnt;
     logic [15:0] act_cnt;
 
     always_ff @(posedge clk or negedge rst_ni) begin
