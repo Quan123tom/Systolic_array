@@ -4,9 +4,9 @@ module skew_unit #(
 
     parameter DELAY_PER_STEP = 2 
 )(
-    input  logic clk,
-    input  logic rst_ni,
-    input  logic [GRID_SIZE-1:0][DATA_WIDTH-1:0] in_data,
+    input logic clk,
+    input logic rst_ni,
+    input logic [GRID_SIZE-1:0][DATA_WIDTH-1:0] in_data,
     output logic [GRID_SIZE-1:0][DATA_WIDTH-1:0] out_data
 );
 
