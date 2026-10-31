@@ -13,14 +13,11 @@ module PE #(
     output logic signed [DATA_WIDTH-1:0] activations_out,
     output logic signed [ACC_WIDTH-1:0] sums_out
 );
-    // combinational pass-through creating synchronous column-wide load signal => allows an entire column of PEs to capture weights at the same time
     assign load_en_out = load_en;
     logic signed [DATA_WIDTH-1:0] weight_reg;
     logic signed [DATA_WIDTH-1:0] act_reg;
     logic signed [ACC_WIDTH-1:0] sum_reg;
     logic signed [ACC_WIDTH-1:0] prod_reg;
-    // generating a boolean mask based on activation validity.
-    // forces multiplier inputs to zero statically when data is invalid,  eliminating downstream combinational toggling in the MAC logic.
     logic [DATA_WIDTH-1:0] iso_mask;
     assign iso_mask = (activations_in != '0) ? '1 : '0;
     
