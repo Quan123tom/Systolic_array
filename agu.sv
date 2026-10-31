@@ -3,11 +3,11 @@ module agu #(
     parameter COUNT_DOWN = 0,
     parameter MAX_CNT    = 7
 )(
-    input  logic clk,
-    input  logic rst_ni,
-    input  logic load_base,
-    input  logic en,
-    input  logic [ADDR_WIDTH-1:0] base_addr,
+    input logic clk,
+    input logic rst_ni,
+    input logic load_base,
+    input logic en,
+    input logic [ADDR_WIDTH-1:0] base_addr,
     output logic [ADDR_WIDTH-1:0] current_addr
 );
     always_ff @(posedge clk or negedge rst_ni) begin
