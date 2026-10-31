@@ -2,13 +2,13 @@ module PE #(
     parameter DATA_WIDTH = 8,
     parameter ACC_WIDTH  = 19
 )(
-    input  logic clk,
-    input  logic rst_ni, 
-    input  logic load_en,
+    input logic clk,
+    input logic rst_ni, 
+    input logic load_en,
     output logic load_en_out,
     
-    input  logic signed [DATA_WIDTH-1:0] activations_in,
-    input  logic signed [ACC_WIDTH-1:0] sums_in,
+    input logic signed [DATA_WIDTH-1:0] activations_in,
+    input logic signed [ACC_WIDTH-1:0] sums_in,
     
     output logic signed [DATA_WIDTH-1:0] activations_out,
     output logic signed [ACC_WIDTH-1:0] sums_out
