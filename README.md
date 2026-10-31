@@ -16,5 +16,8 @@ The design was synthesized in Xilinx Vivado targeting a 100 MHz operating clock
 * **Slice Registers**  : 56
 * **Worst Negative Slack (WNS):** +5.039 ns (All constraints met cleanly)
 * **Maximum Achieved Frequency ($F_{\max}$):** ~201.5 MHz
-* 
+  Power & Efficiency estimated statically in Vivado :
+* **Total On-Chip Power:** 0.08 W (80 mW)
+* **Dynamic Array Power:** 0.002 W (2 mW)
+* **Static (Leakage) Power:** 0.078 W (78 mW)
  
