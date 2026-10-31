@@ -3,11 +3,11 @@ module systolic_grid #(
     parameter ACC_WIDTH = 19,
     parameter GRID_SIZE = 8
 ) (
-    input  logic clk,
-    input  logic rst_ni, 
-    input  logic signed [ACC_WIDTH-1:0] in_top [0:GRID_SIZE-1],
-    input  logic load_en_in [0:GRID_SIZE-1], 
-    input  logic signed [DATA_WIDTH-1:0] in_left [0:GRID_SIZE-1], 
+    input logic clk,
+    input logic rst_ni, 
+    input logic signed [ACC_WIDTH-1:0] in_top [0:GRID_SIZE-1],
+    input logic load_en_in [0:GRID_SIZE-1], 
+    input logic signed [DATA_WIDTH-1:0] in_left [0:GRID_SIZE-1], 
     output logic signed [DATA_WIDTH-1:0] out_right [0:GRID_SIZE-1],
     output logic signed [ACC_WIDTH-1:0] out_bottom [0:GRID_SIZE-1]
 );
