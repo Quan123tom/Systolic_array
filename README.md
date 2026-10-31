@@ -14,5 +14,7 @@ This design follows the Weight Stationary architecture and contains:
 The design was synthesized in Xilinx Vivado targeting a 100 MHz operating clock
 * **Slice LUTs** : 45 
 * **Slice Registers**  : 56
-
+* **Worst Negative Slack (WNS):** +5.039 ns (All constraints met cleanly)
+* **Maximum Achieved Frequency ($F_{\max}$):** ~201.5 MHz
+* 
  
