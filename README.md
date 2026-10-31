@@ -11,7 +11,7 @@ This design follows the Weight Stationary architecture and contains:
 * **Operand Isolation :** Combinational gating inside the PEs that forces multiplier inputs to zero when activations are sparse, minimizing dynamic switching power.
 * **Deterministic Pipeline Latency:** Cycle-accurate valid generation (`PIPELINE_DEPTH = 31` cycles) coordinating SRAM read latency, input skewing, and array traversal.
 The design was synthesized in Xilinx Vivado targeting a 100 MHz operating clock for an `8x8` grid:
-**Slice LUTs** : 45 
-**Slice Registers**  : 56
+* **Slice LUTs** : 45 
+* **Slice Registers**  : 56
 
  
