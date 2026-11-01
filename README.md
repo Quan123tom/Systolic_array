@@ -48,9 +48,9 @@ The PE multiply (`gated_act * gated_wt`, 8×8 signed) can be built from LUTs or 
 
 ## 5. Limitations and future work
 
-- **Power not characterised.** Vivado's vectorless estimate uses default switching activity and cannot show the effect of sparsity or isolation. Next step: SAIF-based power analysis from a post-synthesis simulation, comparing the isolated and baseline PE across sparsity levels.
-- **Async reset blocks DSP register absorption.** Moving the PE to synchronous reset is the next experiment for the DSP variant.
-- **Verification is one directed test** at 8×8. Random and sparse stimulus, and other grid sizes, are not yet covered.
+- **Power not characterised.** Vivado's estimate uses default switching activity and cannot show the effect of sparsity. The next step is SAIF-based power analysis from a post-synthesis simulation, comparing the isolated and baseline PE across sparsity levels.
+- **Asynchronous reset likely blocks DSP register absorption.** Moving the PE to synchronous reset is the next experiment for the DSP variant.
+- **Verification includes only 8x8** . Random and sparse stimulus, and other grid sizes, are not yet covered.
 - **Post-synthesis results only.** Post-route area and timing may differ.
 - **Not integrated with a bus.** The host port is a simple memory interface. Connecting it to a processor (for example through AXI4-Lite) is not done.
  
