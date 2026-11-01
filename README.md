@@ -16,7 +16,7 @@ This design follows the Weight Stationary architecture and contains:
 
 ## 4. Synthesis results
 
-AMD Zynq-7000 XC7Z010 (`xc7z010iclg225-1L`), Vivado 2025.2, post-synthesis, 10 ns clock constraint. Post-synthesis timing does not include routing delay.
+Simulation and Synthesis were done in Vivado, for an AMD Zynq-7000 XC7Z010 (`xc7z010iclg225-1L`). I had 10 ns clock constraint and post-synthesis timing does not include routing delay.
 
 **Default build (LUT multipliers):**
 
