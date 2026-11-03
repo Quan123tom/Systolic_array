@@ -40,7 +40,7 @@ The PE multiply (`gated_act * gated_wt`, 8×8 signed) can be built from LUTs or 
 | DSP48E1 | 0 / 80 | 64 / 80 |
 | Block RAM tiles | 8.5 / 60 | 8.5 / 60 |
 | LUTs in `u_grid` | 6,464 | 2,824 |
-| WNS at 10 ns | +1.84 ns | [fill in] |
+| WNS at 10 ns | +1.84 ns | |
 
 - DSP mapping removes 3,640 LUTs (53% of the design), all from the PE grid: about 101 LUTs per PE before, about 44 after. One DSP per PE uses 64 of 80 slices.
 - The register count is identical (5,267). The product register stayed in fabric flip-flops, so the DSP's internal registers are not used. A likely cause is the asynchronous reset on every PE register, since the DSP48E1 supports only synchronous resets. This has not been tested.
