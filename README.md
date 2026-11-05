@@ -12,7 +12,7 @@ This design follows the Weight Stationary architecture and contains:
 
 ## 3. Verification
 
-`tb_tpu_wrapper.sv` is a directed, self-checking testbench. It preloads signed 8×8 matrices (including negative values and zeros) into the SRAM banks, runs the array, reads bank C and compares every output to a golden matrix multiply. It prints `[PASS]` when all 64 outputs match. It writes the memories by hierarchical path, so it runs in RTL simulation only.
+`tb_tpu_wrapper.sv` is a self-checking testbench. It preloads signed 8×8 matrices (including negative values and zeros) into the SRAM banks, runs the array, reads bank C and compares every output to a golden matrix multiply. It prints `[PASS]` when all 64 outputs match. It writes the memories by hierarchical path, so it runs in RTL simulation only.
 
 ## 4. Synthesis results
 
@@ -43,12 +43,12 @@ The PE multiply (`gated_act * gated_wt`, 8×8 signed) can be built from LUTs or 
 | WNS at 10 ns | +1.84 ns | |
 
 - DSP mapping removes 3,640 LUTs (53% of the design), all from the PE grid: about 101 LUTs per PE before, about 44 after. One DSP per PE uses 64 of 80 slices.
-- The register count is identical (5,267). The product register stayed in fabric flip-flops, so the DSP's internal registers are not used. A likely cause is the asynchronous reset on every PE register, since the DSP48E1 supports only synchronous resets. This has not been tested.
+- The register count is identical (5,267). The product register stayed in fabric flip-flops, so the DSP's internal registers are not used. A likely cause is the asynchronous reset on every PE register, since the DSP48E1 supports only synchronous resets. It should be noted that this has not been tested.
 - The isolation logic stays in LUTs in front of the DSP inputs.
 
 ## 5. Limitations and future work
 
-- **Power not characterised.** Vivado's estimate uses default switching activity and cannot show the effect of sparsity. The next step is SAIF-based power analysis from a post-synthesis simulation, comparing the isolated and baseline PE across sparsity levels.
+- **Power is not yet characterised.** Vivado's estimate uses default switching activity and cannot show the effect of sparsity. The next step is SAIF-based power analysis from a post-synthesis simulation, comparing the isolated and baseline PE across sparsity levels.
 - **Asynchronous reset likely blocks DSP register absorption.** Moving the PE to synchronous reset is the next experiment for the DSP variant.
 - **Verification includes only 8x8** . Random and sparse stimulus, and other grid sizes, are not yet covered.
 - **Post-synthesis results only.** Post-route area and timing may differ.
